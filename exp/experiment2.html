@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    
+    <fieldset>
+        <label for="color">What is your favorite color?</label>
+        <select name="color" id="color">
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+    </fieldset>
+
+    <p class="hide">This is blank</p>
+        <script>
+            var colors = ["blue", "red", "green", "yellow", "purple"]
+            var number = prompt(`Choose a number between 1 and 5`);
+            number = parseInt(number);
+            var divChange = document.querySelector(".hide");
+            function changeBG(){
+                document.body.style.backgroundColor= colors[number - 1];
+                divChange.innerHTML = `You choose color ${colors[number-1]}`;
+            }
+            changeBG();
+            var color = document.querySelector("#color");
+            color.addEventListener('change', (event) =>{
+                const bgColor = event.target.value;
+                document.body.style.backgroundColor = bgColor;
+            });
+        </script>
+   
+</body>
+</html>

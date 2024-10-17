@@ -33,7 +33,7 @@
         </select>
     </fieldset>
 
-    <p class="hide">This is blank</p>
+    <p class="hide"></p>
     </div>
 
         <script>
@@ -42,8 +42,13 @@
             number = parseInt(number);
             var divChange = document.querySelector(".hide");
             function changeBG(){
+                if (number===0 || number===""||isNaN(number) ){
+                    alert("that is not a valid number");
+                }
+                else{
                 document.body.style.backgroundColor= colors[number - 1];
                 divChange.innerHTML = `You chose ${colors[number-1]}`;
+                }
             }
             changeBG();
             var color = document.querySelector("#color");

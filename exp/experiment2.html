@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiment 2</title>
+
+    <style>
+        div{
+            background-color: rgba(255, 255, 255, 0.5);  
+            font-size: 2em;  
+            justify-content: center;   
+            align-items: center;
+            text-align: center;
+            margin: 210px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div>
     <fieldset>
         <label for="color">What is your favorite color?</label>
         <select name="color" id="color">
@@ -14,10 +25,13 @@
             <option value="red">Red</option>
             <option value="green">Green</option>
             <option value="yellow">Yellow</option>
+            <option value="purple">Purple</option>
         </select>
     </fieldset>
 
     <p class="hide">This is blank</p>
+    </div>
+
         <script>
             var colors = ["blue", "red", "green", "yellow", "purple"]
             var number = prompt(`Choose a number between 1 and 5`);
@@ -25,13 +39,14 @@
             var divChange = document.querySelector(".hide");
             function changeBG(){
                 document.body.style.backgroundColor= colors[number - 1];
-                divChange.innerHTML = `You choose color ${colors[number-1]}`;
+                divChange.innerHTML = `You color ${colors[number-1]}`;
             }
             changeBG();
             var color = document.querySelector("#color");
             color.addEventListener('change', (event) =>{
                 const bgColor = event.target.value;
                 document.body.style.backgroundColor = bgColor;
+                divChange.innerHTML = `You color ${bgColor}`;
             });
         </script>
    

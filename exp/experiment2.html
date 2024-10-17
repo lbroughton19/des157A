@@ -14,6 +14,10 @@
             text-align: center;
             margin: 210px;
         }
+
+        p{
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -39,14 +43,14 @@
             var divChange = document.querySelector(".hide");
             function changeBG(){
                 document.body.style.backgroundColor= colors[number - 1];
-                divChange.innerHTML = `You color ${colors[number-1]}`;
+                divChange.innerHTML = `You chose ${colors[number-1]}`;
             }
             changeBG();
             var color = document.querySelector("#color");
             color.addEventListener('change', (event) =>{
                 const bgColor = event.target.value;
                 document.body.style.backgroundColor = bgColor;
-                divChange.innerHTML = `You color ${bgColor}`;
+                divChange.innerHTML = `You chose ${bgColor}`;
             });
         </script>
    

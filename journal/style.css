@@ -1,10 +1,11 @@
 body {
     background-color: rgba(232, 204, 137, .5);
+    transition: all ease 1s;
 }
 
-article{
+/* article{
     
-}
+} */
 
 main{
     margin-bottom: 15px;
@@ -120,4 +121,8 @@ footer a:hover{
     /* Display property doesnt animate properly, so using visibiility is better */
     display: none;
     opacity: 0;
+}
+
+section{
+    margin-bottom: 60px;
 }

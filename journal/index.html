@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     
+
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
@@ -14,7 +15,41 @@
 </head>
 <body>
     <main>
-    <section id="journal 1">
+
+    <section id="journal2">
+        <article>
+            <div class="label">
+                <h1>Learning Journal 2</h1>
+            </div>
+            <div class="journalcontent">
+
+                <section class="overlay hidden">
+                    <article>
+                            
+                    <div id="image">
+                        <img src="../images/nytimes.png" alt="survey1">
+                    </div>
+                    
+                        <button class="close">Close</button>
+                    </article>
+                </section>
+
+                <div class="maindisplay">
+                    <p>This set of blog posts were about overlays and best practices for how to use them. As a visual artist, I am curious about the best ways to show images to people so that size and quality do not have to be irreperably compromised.</p>
+                    
+                    <p> The most common example of overlays that I see on the web are not for images, but instead for forms (especially terms and conditions) and calls to action (signing into a mailing list or visiting another link). The idea that it may be a better practice to open content on a new page rather than use an overlay is one that I have never considered.  </p>
+                    </div>
+                    <div class="flexdisplay">
+                    <p>Key takeaways from these articles is to make the relevance and context of the overlay obvious for readers, make the points of interaction have clear communication, and keep the size and location relatively small so that the key content is accessible.</p>
+                    <figure>
+                        <img src="../images/nytimes.png" alt="nytimes" class="open">
+                        <figcaption>Article paywalls that cannot be dismissed are (annoying) examples of overlays.</figcaption>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section id="journal1">
         <article>
         <div class="label">
             <h1>Learning Journal 1</h1>
@@ -41,9 +76,9 @@
                 <div class="flexdisplay">
                     <p>I decided to open a survey from a restaurant from my email to see if I could identify any of these design principles. This customer satisfaction survey from Dominos is making use of a preogress bar and radial options instead of drop down menus.</p>
                     <figure>
-                    <img src="../images/survey.png" alt="survey2">
+                    <img src="../images/survey.png" alt="survey2" class="open">
                     <figcaption>Survey Screenshot from Domino's Pizza</figcaption>
-                    <figcaption>(Click image to enlarge)</figcaption>
+                    <!-- <figcaption>(Click image to enlarge)</figcaption> -->
                 </figure>
                 </div>
                 </div>
@@ -60,21 +95,46 @@
             'use strict';
              console.log("reading JS");
 
-            const openImg = document.querySelector('img[alt=survey2]');
+             let mouseY;
+             
+
+
+            window.addEventListener('scroll', function(event){
+                mouseY = window.pageYOffset;
+                console.log(mouseY);
+                if (mouseY >= 700){
+                document.body.style.backgroundColor="rgba(73, 93, 48, .9)";
+            }
+
+            else {
+                document.body.style.backgroundColor="rgba(232, 204, 137, .5)";
+            }
+
+            })
+
+            
+
+            const openBtn = document.querySelectorAll('.open');
             const closeBtn = document.querySelector('.close');
             const overlay= document.querySelector('.overlay');
 
-            openImg.addEventListener('click', function(event){
-                event.preventDefault();
-                overlay.classList.add('showing');
-                overlay.classList.remove('hidden');
-            })
+            for (eachBtn of openBtn){
+                eachBtn.addEventListener('click', function(event){
+                    event.preventDefault();
 
-            closeBtn.addEventListener('click',function(event){
-                event.preventDefault();
-                overlay.classList.add('hidden');
-                overlay.classList.remove('showing');
-            })
+                })
+            }
+            // openImg.addEventListener('click', function(event){
+            //     event.preventDefault();
+            //     overlay.classList.add('showing');
+            //     overlay.classList.remove('hidden');
+            // })
+
+            // closeBtn.addEventListener('click',function(event){
+            //     event.preventDefault();
+            //     overlay.classList.add('hidden');
+            //     overlay.classList.remove('showing');
+            // })
         }());
     </script>
 </body>

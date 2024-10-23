@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What type of Music Are You?</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>  
+    <div class="intro">
+    <h1>What Music Genre are you?</h1>
+    <p>Answer the questions to see what musical genere aligns with your personality.</p>
+    </div>
+    <div id="quiz">
+        <div id="q1" class="question">
+            <p>It's a Friday night, what are you doing?</p>
+            <label>
+                <input type="radio" name="q1" value="Jazz"> See who is around to hang out
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q1" value="Pop"> Go out to dinner
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q1" value="Hip-Hop"> Find the party!
+            </label>
+            <br>
+        </div>
+        
+        <br>
+        
+        <div id="q2" class="question">
+            <p>It's picture day! What are you wearing?</p>
+            <label>
+                <input type="radio" name="q2" value="Hip-Hop"> You already have a distinct style
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q2" value="Jazz"> You find something random
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q2" value="Pop"> You pick something out the night before
+            </label>
+            <br>
+        </div>
+
+        <div id="q3" class="question">
+            <p>You have to give a presentation! Your approach is to:</p>
+            <label>
+                <input type="radio" name="q3" value="Pop"> Make a script and stick to it!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q3" value="Hip-Hop"> Speak from the heart!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q3" value="Jazz"> Make bullet points and improvise!
+            </label>
+            <br>
+        </div>
+
+        <div id="q4" class="question">
+            <p>You are on a 12 hour flight. What do you do to pass the time?</p>
+            <label>
+                <input type="radio" name="q4" value="Hip-Hop"> Listening to music
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q4" value="Pop"> Buy in-flight Wi-Fi
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q4" value="Jazz"> Read a book LOL
+            </label>
+            <br>
+        </div>
+
+        <div id="q5"  class="question">
+            <p>You've been offered an all-expense paid vacation. Where will you go?</p>
+            <label>
+                <input type="radio" name="q5" value="Hip-Hop"> The city!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q5" value="Pop"> The beach!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q5" value="Jazz"> The countryside!
+            </label>
+            <br>
+        </div>
+
+        <button onclick="calculateResult()">Get Results</button>
+    </div>
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

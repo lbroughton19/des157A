@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Musical Genre Are You?</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>  
+    <div class="intro">
+    <h1>What Music Genre are you?</h1>
+    <p>Answer the questions to see what musical genre aligns with your personality.</p>
+    </div>
+    <div id="quiz">
+        <div id="q1" class="question">
+            <p>It's a Friday night, what are you doing?</p>
+            <label>
+                <input type="radio" name="q1" value="Jazz"> Ask to see who is around
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q1" value="Pop"> Go out to dinner
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q1" value="Hip-Hop"> Find the party!
+            </label>
+            <br>
+        </div>
+        
+        <br>
+        
+        <div id="q2" class="question">
+            <p>It's picture day! What are you wearing?</p>
+            <label>
+                <input type="radio" name="q2" value="Hip-Hop"> Your regular style
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q2" value="Jazz"> Whatever is clean
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q2" value="Pop"> You had an outfit planned already
+            </label>
+        </div>
+        <br>
+
+        <div id="q3" class="question">
+            <p>You have to give a presentation! Your approach is to:</p>
+            <label>
+                <input type="radio" name="q3" value="Pop"> Make a script and stick to it!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q3" value="Hip-Hop"> Speak from the heart!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q3" value="Jazz"> Make bullet points and improvise!
+            </label>
+            <br>
+        </div>
+        <br>
+
+
+        <div id="q4" class="question">
+            <p>You are on a 12 hour flight. What do you do to pass the time?</p>
+            <label>
+                <input type="radio" name="q4" value="Hip-Hop"> Listening to music
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q4" value="Pop"> Buy in-flight Wi-Fi
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q4" value="Jazz"> Read a book 
+            </label>
+            <br>
+        </div>
+
+        <br>
+
+
+        <div id="q5"  class="question">
+            <p>You've been offered an all-expense paid vacation. Where will you go?</p>
+            <label>
+                <input type="radio" name="q5" value="Hip-Hop"> The city!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q5" value="Pop"> The beach!
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="q5" value="Jazz"> The countryside!
+            </label>
+            <br>
+        </div>
+
+        
+        
+        <div id="Jazz" class="result hidden">
+            <article>
+            <h2>You are Jazz!</h2>
+            <p>You are a quick thinker and can adapt to many situations. When others would doubt themselves, you have enough trust in yourslef to go your own direction. Others often comment on your creativity, intelligence, and out of the box thinking.</p>
+            <button class="close">Close</button>
+        </article>
+        
+        </div>
+
+        <div id="Hip-Hop" class="result hidden">
+        <article>
+            <h2>You are Hip-Hop!</h2>
+            <p>You have a straight forward and direct personality that others can't help but notice. You are not afraid to speak up about what matters, or to go against the opinions of the crows. Others often comment on your style, confidence, and charisma.</p>
+            <button class="close">Close</button>
+        </article>
+        
+        </div>
+
+        <div id="Pop" class="result hidden">
+        <article>
+            <h2>You are Pop!</h2>
+            <p>You have a firendly and approachable demeanor that others gravitate towards. You are sociable and well-informed, and have no shortage of friends. Other often comment on your sense of humor and social skills.
+            </p>
+            <button class="close">Close</button>
+        </article>            
+            
+        </div>
+
+
+    </div>
+    <button onclick="calculateResult()">What's My Genre?</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

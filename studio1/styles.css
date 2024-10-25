@@ -1,0 +1,155 @@
+body{
+    margin: auto;
+}
+
+.intro{
+    max-width: 1020px;
+    margin: 20px 5px;
+    background-color: #f68e56;
+    text-align: center;
+    display:block;
+    border-style: solid;
+    border-radius: 28px;
+    border-color: black;
+    padding: 5px;
+}
+h2{
+    text-align: center;
+}
+
+#q1{
+    background-color: #a0d4e1;
+}
+
+#q2{
+    background-color: #fff568;
+}
+
+#q3{
+    background-color: #acd373;
+}
+
+#q4{
+    background-color: #e4797d;
+}
+
+#q5{
+    background-color: #bd8cbf;
+}
+#quiz {
+    
+    border-width: 3px;
+    margin: 20px 5px;
+    max-width: 85%;
+    font-size: 16px;
+    
+}
+.hidden{
+    display: none;
+}
+
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.overlay article{
+    box-sizing:border-box;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 50vw;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Stops the text or content from overlowing out of overlay box */
+    overflow-y: scroll; 
+    overflow-x: scroll;
+}
+.question{
+    border-style: solid;
+    border-radius: 25px;
+    border-color: black;
+    padding: 20px;
+    margin: auto;
+    width: 100%;
+    text-align: left;
+    /* max-width: 50%; */
+    display: block;
+    
+}
+
+.question p {
+    text-align: left;
+}
+h1{
+    font-family: "Knewave";
+    font-size: 36px;
+}
+h1, p {
+    text-align: center;
+}
+
+
+label {
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+input{
+    text-align: center;
+}
+
+.question p{
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #293d45;
+    color: white;
+    display: block;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    text-decoration: underline;
+}
+
+.hidden button {
+    display: none;
+}
+
+@media only screen and (min-width: 720px){
+#q2, #q4{
+    float: right;
+}
+.question{
+    max-width: 50%;
+}
+#quiz{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+.intro{
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.question p{
+    font-size: 24px;
+}
+}

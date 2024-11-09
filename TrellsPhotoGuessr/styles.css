@@ -371,7 +371,7 @@ img{
     /* .overlay img{
         /* transform: translate(0,0);
         transform: translate(-60%, -40%);     */
-    } */
+     
     #buttons{
         flex-direction: row;
     }
@@ -393,3 +393,14 @@ img{
         display: flex;
         align-items: center;
     }
+}
+
+@media (max-width: 768px) {
+    .zoom-lens {
+        display: none !important; /* Prevents zoom overlay from appearing on mobile, they can just zoom manually */
+    }
+    #tip2{
+        display: none;
+    }
+}
+

@@ -395,12 +395,12 @@ img{
     }
 }
 
-@media (max-width: 768px) {
-    .zoom-lens {
+@media (max-width: 600px) {
+    /* .zoom-lens {
         display: none !important; /* Prevents zoom overlay from appearing on mobile, they can just zoom manually */
-    }
+    */
     #tip2{
-        display: none;
+        display: none !important;
     }
 }
 

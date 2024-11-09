@@ -20,6 +20,7 @@
     let round=0; 
     let difference = 0;
     const scoreCounter = document.querySelector('#scoreCounter');
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     
     
     //putting all photos into an array with latlng
@@ -302,6 +303,12 @@ function moveLens(e) {
     zoomLens.style.backgroundPosition = `-${x * zoomFactor}px -${y * zoomFactor}px`;
     
     zoomLens.style.transition = "left 0.1s, top 0.1s";
+}
+
+if (!isTouchDevice) {
+    zoomImage.addEventListener("mousemove", moveLens);
+    zoomImage.addEventListener("mouseenter", showLens);
+    zoomImage.addEventListener("mouseleave", hideLens);
 }
 
 })();

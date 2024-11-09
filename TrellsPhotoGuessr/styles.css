@@ -280,7 +280,7 @@ img{
     background-image: url(#); /* Set dynamically via JavaScript */
     background-repeat: no-repeat;
     background-size: 1600px 1200px; /* 2x zoom of the original image */
-    z-index: 2000000001;
+    /* z-index: 2000000001; */
 }
 
 

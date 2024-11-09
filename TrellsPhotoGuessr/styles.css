@@ -92,10 +92,21 @@ html {
     -moz-tab-size: 4;
     tab-size: 4;
 }
+main{
+    background-image: url("worldImages/bacgkgroundimg2.avif");
+
+}
 
 /* Remove list styling */
 ol, ul {
     list-style: none;
+}
+
+.title{
+    font-family: "Bebas Neue";
+    font-size: 24px;
+    color: #ebc66d;
+    text-decoration: underline;
 }
 
 /* Remove quotes for blockquotes and q */
@@ -117,9 +128,9 @@ table {
 a {
     text-decoration: none;
     color: inherit;
-} */
+} 
 
-body{
+body, header{
     padding: 0;
     margin: 0;
     display: block;
@@ -131,17 +142,83 @@ body, html, #map {
     padding: 0;
 }
 
+#buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 header{
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    color: #ebc66d;
     text-align: center;
+    background-image: url("worldImages/bacgkgroundimg2.avif");
+    box-sizing: border-box;
+}
+
+#intro{
+    position: fixed;
+    background-image: url("worldImages/IMG_4546.avif") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+}
+
+#intro article{
+    box-sizing:border-box;
+    background-color: rgba(0,0,0,.9);
+    
+    color: white;
+    padding: 40px;
+    border-radius: 22px;
+    width: 70vw;
+    /* height: 80vh; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Stops the text or content from overlowing out of overlay box */
+    overflow-y: scroll; 
+    overflow-x: scroll;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#start{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #384529;
+    color: whitesmoke;
+    display: block;
+    border-radius: 20px;
+    font-family: Bebas Neue;
+    padding: 5px;
+    text-decoration: underline;
+}
+.hidden{
+    display: none;
 }
 #game{
     display: flex;
     flex-direction: column;
+    height: 85vh;
     
 }
 #mapSection{
     background-color: #dff19a;
-    height: 700px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,27 +228,69 @@ header{
 }
 
 #map {
-    max-width: 80%; /* Adjust as needed */
+    max-width: 300px; /* Adjust as needed */
     height: 400px; /* Adjust as needed */
 }
 
 img{
     max-width: 80%;
     height: auto;
-    margin: 10%
+    max-height: 60vh;
+    margin: 10px;
+    margin-bottom: 10px;
 }
 
 #result{
     display: inline;
 }
 
+#scoreCounter{
+    color: white;
+    font-size: 24px;
+}
+
 #gamePhoto{
     background-color: #ebc66d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gamePhoto p{
+    display: inline;
+    margin: 0px;
+    text-align: left;
+}
+
+.zoom-image {
+    /* width: 400px;
+    height: 300px; */
+    object-fit: cover;
+    position: relative; /* For lens positioning */
+}
+
+.zoom-lens {
+    position: absolute;
+    width: 200px; /* Size of the zoom lens */
+    height: 200px;
+    border: 2px solid #000;
+    display: none; /* Initially hidden */
+    cursor: crosshair;
+    background-image: url(#); /* Set dynamically via JavaScript */
+    background-repeat: no-repeat;
+    background-size: 1600px 1200px; /* 2x zoom of the original image */
+    z-index: 2000000001;
+}
+
+
+#hint1, #hint2{
+    margin: 0;
 }
 
 #result {
-    font-size: 2em;
-    margin:10%;
+    font-size: 1em;
+    margin: 8%;
 }
 
 #guessButton{
@@ -180,5 +299,97 @@ img{
     border-radius: 10px;
     color: #ebc66d;
     padding: 5px;
-    margin: 10%;
+    margin: 5px;
 }
+
+#playAgain{
+    text-decoration: underline;
+    background-color: black;
+    border-radius: 10px;
+    color: #ebc66d;
+    padding: 5px;
+    margin: 5px;
+}
+
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000000000;
+}
+
+.overlay img{
+    max-width: 90vw; 
+    max-height: 90vh; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    transform: translate(0%, -5%);
+}
+
+.hidden{
+    display: none;
+}
+
+.corner {
+    font-size: 36px;
+    margin:0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: tomato;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+@media screen and (min-width: 600px){
+    #game{
+        display: flex;
+        flex-direction: row;
+    }
+    #mapSection, #gamePhoto{
+        flex: 1;
+        max-width: 50%;
+    }
+    #map{
+        max-width: 80%; /* Adjust as needed */
+        height: 400px;
+    }
+
+    /* .overlay img{
+        /* transform: translate(0,0);
+        transform: translate(-60%, -40%);     */
+    } */
+    #buttons{
+        flex-direction: row;
+    }
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 14;
+    }
+    #scoreCounter{
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }

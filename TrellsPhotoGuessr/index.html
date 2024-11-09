@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trell's PhotoGuessr</title>
 
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Knewave&family=Luxurious+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
 
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
    <link rel="stylesheet" href="styles.css">
 
@@ -19,22 +26,42 @@
 </head>
 <body>
     <header>
+        <div id="info">
         <h1>Trell's PhotoGuessr</h1>
         <p>Analyze the photo and use the map to guess where it was taken!</p>
+        </div>
+        <div id="scoreCounter"></div>
     </header>
-        <div id="game">
+    <main>
+        <div id="intro">    
+            <article>
+            <h1>Welcome To <span class="title">Trell's PhotoGuessr!</span></h1>
+            <p>Analyze the photo and guess the location on the map. Try to get within 500 miles!</p>
+            <a href="#" id="start">Start Game</a>
+            </article>
+        </div>
+        <div id="game" class="hidden">
             <div id="gamePhoto">
-                <img id="photo" src="#" alt="game image">
+                <p>Click the image to enlarge</p>
+                <p>Hover over the image to zoom</p>
+                <img id="photo" src="#" alt="game image" class="zoom-image">
+                <div class="zoom-lens"></div>
                 <p id="hint1"></p>
                 <p id="hint2"></p>
             </div>
             <div id="mapSection">
                 <div id="result"></div>
                 <div id="map"></div>
-                <a href="#" id="guessButton">Guess</a>           
+                <div id="buttons">
+                <a href="#" id="guessButton">Guess</a>
+                <a href="#" id="playAgain">Play Again</a> 
+                </div>           
             <div id="blurb"></div>
-            </div>
         </div>
-    
+        <div class="overlay hidden">
+            <img id="photo" src="#" alt="game image" class="zoom-image">
+            <button class="corner close">&otimes;</button>
+        </div>
+    </main>
 </body>
 </html>

@@ -406,7 +406,11 @@ img{
     }
 
     #guessButton{
-        margin: 25px;
+        margin: 30px;
+    }
+
+    #playAgain{
+        margin-bottom: 30px;
     }
 }
 

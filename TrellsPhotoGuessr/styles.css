@@ -398,9 +398,15 @@ img{
 @media (max-width: 600px) {
     /* .zoom-lens {
         display: none !important; /* Prevents zoom overlay from appearing on mobile, they can just zoom manually */
-    */
+    #tip1{
+        padding: 25px;
+    }
     #tip2{
         display: none !important;
+    }
+
+    #guessButton{
+        margin: 25px;
     }
 }
 

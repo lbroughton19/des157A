@@ -93,7 +93,7 @@ html {
     tab-size: 4;
 }
 main{
-    background-image: url("worldImages/bacgkgroundimg2.jpg");
+    background-image: url("worldImages/bacgkgroundimg.jpg");
 
 }
 
@@ -154,13 +154,13 @@ header{
     padding: 5px;
     color: #ebc66d;
     text-align: center;
-    background-image: url("worldImages/bacgkgroundimg2.avif");
+    background-image: url("worldImages/bacgkgroundimg.jpg");
     box-sizing: border-box;
 }
 
 #intro{
     position: fixed;
-    background-image: url("worldImages/IMG_4546.avif") ;
+    background-image: url("worldImages/IMG_4546.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

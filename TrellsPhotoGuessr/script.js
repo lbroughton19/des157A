@@ -364,7 +364,7 @@ function moveLens(e) {
 }
 
 if (!isTouchDevice) {
-    zoomImage.addEventListener("mousemove", moveLens);
+    zoomImage.addEventListener("mousemove", moveLens); 
     zoomImage.addEventListener("mouseenter", showLens);
     zoomImage.addEventListener("mouseleave", hideLens);
     document.querySelector('#tip2').style.display="none";

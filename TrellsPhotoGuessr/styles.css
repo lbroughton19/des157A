@@ -103,8 +103,8 @@ ol, ul {
 }
 
 .title{
-    font-family: "Bebas Neue";
-    font-size: 24px;
+    font-family: 'birds_of_paradise';
+    font-size: 42px;
     color: #ebc66d;
     text-decoration: underline;
 }
@@ -128,6 +128,7 @@ table {
 a {
     text-decoration: none;
     color: inherit;
+    font-family: 'Bebas Neue';
 } 
 
 body, header{
@@ -138,24 +139,46 @@ body, header{
 body, html, #map {
     height: 100%;
     width: 100%; /* Set to full width of the viewport */
+    max-width: 2440px;
     margin: 0;
     padding: 0;
+    
 }
+
 
 #buttons{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: "Bebas Neue";
 }
 
 header{
     display: inline-block;
     width: 100%;
     padding: 5px;
-    color: #ebc66d;
+    color: white;
     text-align: center;
-    background-image: url("worldImages/bacgkgroundimg.jpg");
+    background-image: url("../images/plannettes.png");
     box-sizing: border-box;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+
+
+#info h1{
+    background-color: rgba(0, 0, 0, 0.7);   
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#info p{
+    font-family: Bebas Neue;
+    background-color: rgba(0, 0, 0, 0.7);   
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #intro{
@@ -179,7 +202,8 @@ header{
 #intro article{
     box-sizing:border-box;
     background-color: rgba(0,0,0,.9);
-    
+    font-family: Bebas Neue;
+    font-size: 24px;
     color: white;
     padding: 40px;
     border-radius: 22px;
@@ -201,10 +225,10 @@ header{
     margin-bottom: 20px;
     background-color: #384529;
     color: whitesmoke;
-    display: block;
+    display: inline-block;
     border-radius: 20px;
-    font-family: Bebas Neue;
-    padding: 5px;
+    font-family: 'birds_of_paradise';
+    padding: 15px;
     text-decoration: underline;
 }
 .hidden{
@@ -230,6 +254,7 @@ header{
 #map {
     max-width: 300px; /* Adjust as needed */
     height: 400px; /* Adjust as needed */
+    margin-bottom: 10%;
 }
 
 img{
@@ -244,9 +269,19 @@ img{
     display: inline;
 }
 
+#location{
+    font-family: Bebas Neue;
+    font-size: 1.4em;
+}
+
 #scoreCounter{
-    color: white;
+    font-family: 'birds_of_paradise';
+    color: rgb(200, 162, 39);
     font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 #gamePhoto{
@@ -290,7 +325,7 @@ img{
 
 #result {
     font-size: 1em;
-    margin: 8%;
+    margin: 2%;
 }
 
 #guessButton{
@@ -336,8 +371,16 @@ img{
     transform: translate(0%, -5%);
 }
 
-.hidden{
-    display: none;
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .corner {
@@ -354,6 +397,49 @@ img{
     outline: none;
 }
 
+
+#roundResults{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+#smallPhoto{
+    max-width: 240px;
+    height: auto;
+}
+
+#playAgainInner{
+    text-decoration: underline;
+    background-color: black;
+    border-radius: 10px;
+    color: #ebc66d;
+    padding: 5px;
+    margin: 5px;
+}
+
+#closeInner{
+    text-decoration: underline;
+    background-color: black;
+    border-radius: 10px;
+    color: #ebc66d;
+    padding: 5px;
+    margin: 5px;
+}
+
+#description{
+    max-width: 65ch;
+}
+
 @media screen and (min-width: 600px){
     #game{
         display: flex;
@@ -364,8 +450,10 @@ img{
         max-width: 50%;
     }
     #map{
+        margin-top: 5%;
         max-width: 80%; /* Adjust as needed */
         height: 400px;
+        
     }
 
     /* .overlay img{
@@ -373,6 +461,8 @@ img{
         transform: translate(-60%, -40%);     */
      
     #buttons{
+        margin-top: 5%;
+        width: 30%;
         flex-direction: row;
     }
     header{

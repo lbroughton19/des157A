@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Knewave&family=Luxurious+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
 
+    <link href="fonts/stylesheet.css" rel="stylesheet">
+
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
@@ -53,17 +55,31 @@
                 <p id="hint2"></p>
             </div>
             <div id="mapSection">
-                <div id="result"></div>
-                <div id="map"></div>
                 <div id="buttons">
-                <a href="#" id="guessButton">Guess</a>
-                <a href="#" id="playAgain">Play Again</a> 
-                </div>           
+                    <a href="#" id="guessButton">Guess</a>
+                    <a href="#" id="playAgain">Play Again</a> 
+                    </div>  
+                    <div id="result"></div>
+                <div id="map"></div>
+
+                
+                         
             <div id="blurb"></div>
         </div>
         <div class="overlay hidden">
             <img id="photo" src="#" alt="game image" class="zoom-image">
             <button class="corner close">&otimes;</button>
+        </div>
+
+        <div id="roundResults" class="overlay hidden">
+            <div id="container">
+            <h2 id="playerScore"></h2>
+            <img src="#" alt="gamePhoto" id="smallPhoto">
+            <p id="location"></p>
+            <p id="description">Description goes here</p>
+            <a href="#" id="playAgainInner">Play Again</a> 
+            <a href="#" id="closeInner">Close</a> 
+        </div>
         </div>
     </main>
 </body>

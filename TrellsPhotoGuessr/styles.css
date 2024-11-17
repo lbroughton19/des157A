@@ -197,6 +197,7 @@ header{
     align-items: center;
     text-align: center;
     z-index: 3;
+    overflow: hidden;
 }
 
 #intro article{
@@ -438,6 +439,11 @@ img{
 
 #description{
     max-width: 65ch;
+}
+
+#overlayButtons{
+    display: flex;
+    flex-direction: row;
 }
 
 @media screen and (min-width: 600px){

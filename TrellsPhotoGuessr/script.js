@@ -254,7 +254,7 @@
 
         
         document.querySelector('#smallPhoto').innerHTML = `${photos[randomIndex].src}`;
-        document.querySelector('#location').innerHTML=`You are in <p style="color: #c19613; font-size: 24px;">${photos[randomIndex].location}</p>`;
+        document.querySelector('#location').innerHTML=`You are in <span style="color: #c19613; font-size: 24px;">${photos[randomIndex].location}</span>`;
         document.querySelector('#description').innerHTML = `${photos[randomIndex].description}`;
 
 
@@ -323,7 +323,7 @@
             score = Math.max(0, 100 - Math.floor(distance*.2));//without having a floor of zero, scores can easily become negative
 
             //updates score in roundresults overlay
-            document.querySelector('h2').innerHTML = `You Scored <strong>${score}</strong> points!`;
+            document.querySelector('h2').innerHTML = `You Scored <span style="color: #c19613; font-size: 24px;">${score}</span> points!`;
 
             maxScore = maxPoints * round;
 

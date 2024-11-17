@@ -103,7 +103,9 @@ ol, ul {
 }
 
 .title{
-    font-family: 'birds_of_paradise';
+    /* font-family: 'birds_of_paradise'; */
+    text-decoration: wavy;
+    font-style: italic;
     font-size: 42px;
     color: #ebc66d;
     text-decoration: underline;
@@ -198,17 +200,19 @@ header{
     text-align: center;
     z-index: 3;
     overflow: hidden;
+    padding: 5px;
 }
 
 #intro article{
     box-sizing:border-box;
     background-color: rgba(0,0,0,.9);
     font-family: Bebas Neue;
-    font-size: 24px;
+    font-size: 22px;
     color: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 22px;
     width: 70vw;
+    text-align: center;
     /* height: 80vh; */
     position: absolute;
     top: 50%;
@@ -403,6 +407,7 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2px;
 }
 
 #container{
@@ -416,6 +421,7 @@ img{
 }
 #smallPhoto{
     max-width: 240px;
+    max-height: 240px;
     height: auto;
 }
 

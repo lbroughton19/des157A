@@ -1,6 +1,8 @@
 (function (){
     const game = document.querySelector('#game');
     let map; 
+    let photo;
+    let direction = "";
     let currentLocation; //this will be the correct locations of the photos
     let userGuess; // storing the users guess
     let guessLine;
@@ -217,6 +219,7 @@
     });
 
 
+
     
     // initializes map
     function startMap(){
@@ -246,7 +249,7 @@
     function loadRandomPhoto(){
          randomIndex = Math.floor(Math.random()* photos.length); //math random will generate a number between 0 and 1. that will be multiplied by the total number of images in the array, and the number will be rounded down. the results are number from 0 the the length of the array-1.
 
-        let photo = photos[randomIndex];//uses this random number to open the photo array and pull an image
+        photo = photos[randomIndex];//uses this random number to open the photo array and pull an image
 
         document.querySelector('#photo').src = photo.src; //changes the source of the photo in the game div to the photo in the array
 
@@ -259,8 +262,8 @@
 
 
         currentLocation = {lat: photo.lat, lng: photo.lng}; //the correct answer is set to the latlng in the original img src
-        console.log(`${photo.src}`);
-        console.log(photos.length);
+        // console.log(`${photo.src}`);
+        // console.log(photos.length);
         zoomLens.style.backgroundImage = `url(${photo.src})`;//for zoom overlay
         photos.splice(randomIndex, 1);//splice is taking the argument of the elemen t you want o start deleting, and how many elemnts from there. Random index sets the number, and we only want to delete one.
         
@@ -299,11 +302,55 @@
         if (guessCount<=3){
         
             if (distance>500 && guessCount===1){
-                document.querySelector('#result').innerHTML = `Try again! You are ${Math.round(distance)} miles from the location.`;  
+                //this is where i would put the logic for checking if you are further away north/sputh or east/west
+                //compare absolute valuse of guess and current latlng, which will narrow down to say north/sout or east west
+                //then compare which value is greater to print north/south or east/west
+
+                if (Math.abs(photo.lat - guess.lat)>Math.abs(photo.lng - guess.lng)){
+                    if (photo.lat > guess.lat){
+                        direction = "North";
+                    }
+
+                    else{
+                        direction = "South";
+                    }
+                }
+
+                else {
+                    if (photo.lng > guess.lng){
+                        direction = "East";
+                    }
+
+                    else{
+                        direction = "West";
+                    }
+                }
+
+                document.querySelector('#result').innerHTML = `You are ${Math.round(distance)} miles away! Try going <strong>${direction}</strong>.`;  
                 // hint1.innerHTML=  `Hint 1: ${photos[randomIndex].hint1}`;        
                 }
             else if (distance>500 && guessCount===2){
-                document.querySelector('#result').innerHTML = `One More try! You are ${Math.round(distance)} miles from the location.`;
+                if (Math.abs(photo.lat - guess.lat)>Math.abs(photo.lng - guess.lng)){
+                    if (photo.lat > guess.lat){
+                        direction = "North";
+                    }
+
+                    else{
+                        direction = "South";
+                    }
+                }
+
+                else {
+                    if (photo.lng > guess.lng){
+                        direction = "East";
+                    }
+
+                    else{
+                        direction = "West";
+                    }
+                }
+
+                document.querySelector('#result').innerHTML = `One More try! You are ${Math.round(distance)} miles away! Try going <strong>${direction}</strong>.`;
                 // hint2.innerHTML= `Hint 2: ${photos[randomIndex].hint2}`;
             }
 

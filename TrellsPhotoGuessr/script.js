@@ -223,8 +223,11 @@
     
     // initializes map
     function startMap(){
-    map=L.map('map').setView([6.2176, -75.5821], 1);
-    L.tileLayer("https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png" , { attribution: 'Your Attribute' }).addTo(map);
+    map=L.map('map').setView([0, 0], 1);
+    
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}' , { attribution: '© Esri & contributors',
+        minZoom: 1
+    }).addTo(map);
 
         //function for putting marker whereever user taps
 

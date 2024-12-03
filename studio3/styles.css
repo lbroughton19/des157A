@@ -1,0 +1,103 @@
+h1, h2, h3, p, nav ul {
+
+    margin: 0;
+   
+    padding: 0;
+   
+   /* this removes default margin/padding 
+   
+    from these elements. You might want to add
+   
+    a few others in here.*/
+   
+   }
+   
+   img {
+   
+    display: block;
+   
+    max-width: 100%;
+   
+    height: auto;
+   
+   /* this sets images as block elements
+   
+    and makes sure they don't bust out of 
+   
+    their containers, and that they maintain
+   
+    their aspect ratio. */
+   
+   }
+   
+   nav ul {
+   
+    list-style-type: none;
+   
+   /* gets rid of bullets */
+   
+   }
+   
+   /* You *might* want to convert all elements
+   
+   to box-sizing: border box */
+   
+   * {
+   
+    box-sizing: border-box;
+   
+   }
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#board{
+    /* background-color: aqua */
+
+    /* background image should have the same height/width as the board size in script */
+    background-image: url(images/gamebg.png);
+}
+
+.background{
+    background-color: seashell;
+}
+
+#desktop{
+    display: none;
+}
+
+.info{
+    /* margin: auto; */
+    padding: 15px;
+    line-height: 1.5em;
+}
+
+p{ 
+    font-size: 12px;
+}
+
+@media (min-width:600px) {
+    .background{
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        align-items: center;
+    }
+    .info{
+        font-size: 24px;
+        margin: 5%;
+        padding: 15px;
+        line-height: 1.5em;
+    }
+
+    #mobile{
+        display: none;
+    }
+
+    #desktop{
+        display: inline;
+    }
+} 
+    

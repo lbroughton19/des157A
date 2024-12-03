@@ -9,8 +9,8 @@ let boardHeight = 640;
 let context; //this is for drawing on the canvas
 
 //plane
-let planeWidth = 34; //width/height ration = 408/228. the dimensions are simplified proportionally.
-let planeHeight = 24;
+let planeWidth = 68; //width/height ration = 408/228. the dimensions are simplified proportionally.
+let planeHeight = 38;
 
 //whenver we draw our bird, we need to specify 4 arguments, the xy positions of where to draw, and how big to draw it (width/heigh)
 let planeX = boardWidth/8; //positions the origin (top left pixel) 1/8 along the screen on x axis
@@ -32,7 +32,7 @@ let plane = {
 
 //function for drawing obstacles
 let obstacleArray = [];
-let obstacleWidth = 64;
+let obstacleWidth = 64; //originally 64
 let obstacleHeight = 512;
 let obstacleX = boardWidth;
 let obstacleY = 0;
@@ -43,17 +43,18 @@ let bottomObstacleImg;
 //game physics
 let velocityX = -2; //obstacle moving to the left, obstacles moving to the right would have a positive direction.
 let velocityY = 0;//bird jump speed, set it to a negative value to go up, or positive value to go down.
-let gravity = 0.4; //positive number to bring plane down
+let gravity = 0.2; //positive number to bring plane down
 
 let gameOver = false;
+let pause = false;
+
 let score = 0;
 
-window.onload = function (){
-    board = document.querySelector("#board");
-    board.height = boardHeight;
-    board.width = boardWidth;
-    context = board.getContext("2d"); //used for drawing on the board. this is using the canvas api, which is reading the following functions though the context of 2d. Another opiton would be webGL.
 
+
+ 
+function initialize(){
+   
     //draw plane
 
     //changes pen color to green
@@ -63,34 +64,42 @@ window.onload = function (){
 
     //load images
     planeImg = new Image();
-    planeImg.src = "flappybird.png";
+    planeImg.src = "images/paperPlane.png";
 
     //draws the image when it loads
     planeImg.onload = function(){
     context.drawImage(planeImg, plane.x, plane.y, plane.width, plane.height );
+
+    //adding listenrs for movement
+    document.addEventListener("keydown", movePlane);
+    board.addEventListener("click", handleClick);
 }
 
     topObstacleImg = new Image();
-    topObstacleImg.src = "toppipe.png";
+    topObstacleImg.src = "images/topObstacle.png";
 
     bottomObstacleImg = new Image();
-    bottomObstacleImg.src = "bottompipe.png";
+    bottomObstacleImg.src = "images/bottomObstacle.png";
 
     requestAnimationFrame(update);//reapins the canvas
     setInterval(placeObstacles, 1500);//runs function to place a new obstavle every 1.5 seconds
     document.addEventListener("keydown", movePlane);
 }
 
+
+
+document.querySelector("#start").addEventListener("click", initialize);
 function update(){
     //loops the function over and over again, cerates main game loop
     requestAnimationFrame(update);
 
-    if (gameOver){
+    if (gameOver || pause){
         return;
     }
     context.clearRect(0,0, board.width, board.height);//clears the previous frame of our canvas so that they elements do not repeat
 
-    //draws plane over and over again each frame
+    //draws plane over and over again each frame. Plane does not  reset position because the Y value is constantly being updated and stored outside the function
+
     velocityY += gravity;
     // plane.y += velocityY;
     plane.y = Math.max(plane.y + velocityY, 0);
@@ -109,7 +118,7 @@ function update(){
 
         //we add the obstacle x value plus the width to get both the left most and right most points
         if (!obstacle.passed && plane.x > obstacle.x + obstacle.width){
-            score +=.5;//because it is passing too pitpes
+            score +=.5;//because it is passing two pipes
             obstacle.passed = true;
         }
 
@@ -167,24 +176,39 @@ function placeObstacles(){
 
 function movePlane(e){
     if (e.code =="Space"|| e.code == "ArrowUp" || e.code == "KeyX"){
-        //jump
-        velocityY = -6;
 
-        //reset game
-        if (gameOver){
-            plane.y = planeY;
-            obstacleArray=[];
-            score=0;
-            gameOver=false;
+        jump();
+        
         }
     }
+function handleClick(){
+    jump();
 }
 
+
+function jump(){
+    //jump
+    velocityY = -4;
+
+    //reset game
+    if (gameOver){
+        plane.y = planeY;
+        obstacleArray=[];
+        score=0;
+        gameOver=false;
+}
+}
 function detectCollision(a, b){
     return a.x < b.x + b.width &&
         a.x + a.width > b.x &&
         a.y < b.y + b.height &&
         a.y + a.height > b.y; 
 }
-}());
+
+document.querySelector("#pause").addEventListener("click", function () {
+    pause = !pause; // Toggle the paused state
+    document.querySelector('#pause').textContent = pause ? "Resume" : "Pause";
+});
+
+})();
 

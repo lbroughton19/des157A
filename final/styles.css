@@ -1,0 +1,144 @@
+body {
+    background-color: rgba(232, 204, 137, .5);
+    transition: all ease 1s;
+}
+
+/* article{
+    
+} */
+
+main{
+    margin-bottom: 15px;
+}
+
+.label{
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    background-color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 64px;
+
+    /* only works if the parent object is aligned to center */
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 22px 200px;
+    border-radius: 28px;
+}
+
+
+
+.journalcontent{
+   max-width: 1200px;
+   background-color: white;
+   margin: auto;
+   padding-left: 50px;
+   padding-right: 50px;
+   border-style: solid;
+   border-radius: 28px;
+}
+
+p{
+    max-width: 65ch;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    line-height: 1.6em;
+}
+
+footer{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.flexdisplay{
+    display: flex;
+}
+
+.flexdisplay p{
+    flex-grow: 2;
+}
+.flexdisplay img{
+   flex-grow: 1;
+   width: 400px;
+   height: 250px;
+}
+
+figcaption{
+    text-align: center;
+}
+
+footer a{
+    font-family: "Permanent Marker";
+    color: black;
+    transition: all .3s;
+}
+
+footer a:hover{
+    color: rgb(165, 50, 50);
+    transition: all .3s;
+}
+
+/* Rules for overlays */
+
+.overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 120vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.overlay article{
+    box-sizing:border-box;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 50vw;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Stops the text or content from overlowing out of overlay box */
+    overflow-y: scroll; 
+    overflow-x: scroll;
+}
+
+.showing {
+    display: block;
+    opacity: 1;
+}
+
+.hidden {
+    /* Display property doesnt animate properly, so using visibiility is better */
+    display: none;
+    opacity: 0;
+}
+
+section{
+    margin-bottom: 60px;
+}
+
+#myImage{
+    float:right;
+    max-width: 480px;
+    height: auto;
+    margin:20px;
+}
+
+#GiaImage{
+    float: left;
+    max-width: 480px;
+    height: auto;
+    margin:20px;
+    overflow: hidden;
+}

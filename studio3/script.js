@@ -54,7 +54,11 @@ let score = 0;
 
  
 function initialize(){
-   
+    board = document.querySelector("#board");
+    board.height = boardHeight;
+    board.width = boardWidth;
+    context = board.getContext("2d"); //used for drawing on the board. this is using the canvas api, which is reading the following functions though the context of 2d. Another opiton would be webGL.
+
     //draw plane
 
     //changes pen color to green
@@ -211,4 +215,3 @@ document.querySelector("#pause").addEventListener("click", function () {
 });
 
 })();
-

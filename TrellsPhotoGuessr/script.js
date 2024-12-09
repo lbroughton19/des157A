@@ -254,7 +254,7 @@
 
         photo = photos[randomIndex];//uses this random number to open the photo array and pull an image
 
-        document.querySelector('#photo').src = photo.src; //changes the source of the photo in the game div to the photo in the array
+        document.querySelector('.photo').src = photo.src; //changes the source of the photo in the game div to the photo in the array
 
         document.querySelector('#smallPhoto').src = photo.src;//updates photo in round end overlay, refer to resultOverlay function.
 

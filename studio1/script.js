@@ -1,4 +1,6 @@
 (function(){
+    'use strict';
+    console.log("reading JS");
 
     function calculateResult(){
     const q1 = document.querySelector('input[name="q1"]:checked');

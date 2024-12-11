@@ -489,12 +489,12 @@
                 startMap();
             })
     // function for enlarging photo on click
-        document.querySelector('#photo').addEventListener('click', function(){
+        document.querySelector('.photo').addEventListener('click', function(){
             const overlay = document.querySelector('.overlay');
             const image = overlay.querySelector('img');
             
             overlay.classList.remove('hidden'); // Make sure overlay is visible
-            image.src = document.querySelector('#photo').src; // Copy the image source
+            image.src = document.querySelector('.photo').src; // Copy the image source
         });
 
     // function for closing enlarged photo

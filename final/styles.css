@@ -69,7 +69,17 @@ footer{
    height: 250px;
 }
 
+figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
 figcaption{
+    margin: auto;
     text-align: center;
 }
 
@@ -112,6 +122,12 @@ footer a:hover{
     overflow-y: scroll; 
     overflow-x: scroll;
 }
+
+#process{
+    max-width: 720px;
+    height: auto;
+}
+
 
 .showing {
     display: block;

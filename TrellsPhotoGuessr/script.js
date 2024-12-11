@@ -311,21 +311,21 @@
 
                 if (Math.abs(photo.lat - guess.lat)>Math.abs(photo.lng - guess.lng)){
                     if (photo.lat > guess.lat){
-                        direction = "North";
+                        direction = "North &#8593;";
                     }
 
                     else{
-                        direction = "South";
+                        direction = "South &#8595;";
                     }
                 }
 
                 else {
                     if (photo.lng > guess.lng){
-                        direction = "East";
+                        direction = "East &#8594;";
                     }
 
                     else{
-                        direction = "West";
+                        direction = "West &#8592;";
                     }
                 }
 
@@ -335,21 +335,21 @@
             else if (distance>500 && guessCount===2){
                 if (Math.abs(photo.lat - guess.lat)>Math.abs(photo.lng - guess.lng)){
                     if (photo.lat > guess.lat){
-                        direction = "North";
+                        direction = "North &#8593;";
                     }
 
                     else{
-                        direction = "South";
+                        direction = "South &#8595;";
                     }
                 }
 
                 else {
                     if (photo.lng > guess.lng){
-                        direction = "East";
+                        direction = "East &#8594;";
                     }
 
                     else{
-                        direction = "West";
+                        direction = "West &#8592;";
                     }
                 }
 

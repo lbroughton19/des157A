@@ -270,6 +270,11 @@ img{
     margin-bottom: 10px;
 }
 
+#process{
+    max-width: 480px;
+    height: auto;
+}
+
 #result{
     display: inline;
 }

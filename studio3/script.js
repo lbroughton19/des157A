@@ -8,6 +8,10 @@ let boardWidth = 360;
 let boardHeight = 640;
 let context; //this is for drawing on the canvas
 
+
+let moveSound = new Audio('sounds/moveSound.mp3');
+let gameOverSound = new Audio('sounds/gameOverSound.mp3');
+
 //plane
 let planeWidth = 68; //width/height ration = 408/228. the dimensions are simplified proportionally.
 let planeHeight = 38;
@@ -143,6 +147,7 @@ function update(){
 
     if (gameOver){
         context.fillText("Game Over", 5, 90);
+        gameOverSound.play();
     }
 }
 
@@ -182,11 +187,13 @@ function movePlane(e){
     if (e.code =="Space"|| e.code == "ArrowUp" || e.code == "KeyX"){
 
         jump();
+        moveSound.play();
         
         }
     }
 function handleClick(){
     jump();
+    moveSound.play();
 }
 
 
